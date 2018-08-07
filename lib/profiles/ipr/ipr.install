@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Installation hooks for IPR profile.
+ */
+
+include_once 'ipr.install_steps.inc';
+include_once 'ipr.install_tasks.inc';
+include_once 'ipr.install_callbacks.inc';
+
+/**
+ * Implements hook_install().
+ */
+function ipr_install() {
+  // Set the ipr theme.
+  ipr_install_setup_theme();
+
+  // Setup roles and permissions.
+  ipr_install_setup_roles();
+}
+
+/**
+ * Implements hook_install_tasks()
+ */
+function ipr_install_tasks() {
+  $tasks = array();
+
+  $tasks['ipr_install_cleanup'] = array(
+    'display_name' => st('IPR: Installation cleanup'),
+    'display' => true,
+    'type' => 'batch',
+  );
+
+  return $tasks;
+}

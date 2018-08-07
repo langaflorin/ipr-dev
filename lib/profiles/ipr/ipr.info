@@ -1,0 +1,29 @@
+name = IPR
+core = 7.x
+description = Impreuna pentru romania
+
+; Drupal core modules
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = dblog
+dependencies[] = field
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = taxonomy
+
+; Contrib modules
+dependencies[] = composer_autoloader
+dependencies[] = features
+dependencies[] = jquery_update
+
+; IPR custom modules
+
+files[] = ipr.profile
