@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the IPR user feature.
+ */
+
+include_once 'ipr_user.features.inc';

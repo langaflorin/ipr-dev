@@ -98,7 +98,7 @@ release:
 ipr:
   profile:
     path: "./lib/profiles/${drupal.site.profile}"
-  features: "ipr_companie"
+  features: "ipr_companie ipr_user"
   theme:
     preprocessor:
       repo: "https://github.com/twbs/bootstrap-sass.git"
