@@ -26,7 +26,7 @@ dependencies[] = jquery_update
 
 ; SRSS features
 dependencies[] = ipr_companie
-dependencies[] ipr_user
+dependencies[] = ipr_user
  
 ; IPR custom modules
 
