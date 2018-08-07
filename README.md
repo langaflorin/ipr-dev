@@ -1,4 +1,4 @@
-# Structural Reform Support Service
+# IPR
 
 
 ## Create development instance
@@ -14,7 +14,7 @@ composer install
 <li><strong>Create the development build properties:</strong>
 <p>Before setting up and installing the site make sure to:</p>
 <ul>
-<li>Copy ./runner.yml.dist to ./runner.yml and edit the values in it to match your environment. Typically you will have to change the value for the base_url as well as the database and jira credentials.</li>
+<li>Copy ./runner.yml.dist to ./runner.yml and edit the values in it to match your environment. Typically you will have to change the value for the base_url.</li>
 <li>Copy ./grumphp.yml.dist to ./grumphp.yml</li>
 </ul>
 </li>
@@ -61,15 +61,6 @@ Run the following runner commands:
 </ol>
 
 <br />
-
-## Jira settings
-<p>After you finish with the installation. You need to setup some jira settings:</p>
-<ol>
-<li><strong>Setup fields mapping:</strong>
-<p>From the admin menu go to "admin/jira-issue-fields-mapping" and map the fields of the request to their corresponding jira fields.</p>
-<li><strong>Cache the options:</strong>
-<p>
-Run cron in order to cache the options for the fileds which have ('option' or 'array') as scheme type:
 
 ```yaml
 drush cron
