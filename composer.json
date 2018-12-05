@@ -38,7 +38,7 @@
     "drupal/libraries": "^2.3",
     "drupal/strongarm": "^2.0",
     "drupal/simple_fb_connect": "2.9",
-    "paragonie/random_compat": "9.99",
+    "paragonie/random_compat": "2",
     "guzzlehttp/guzzle": "6.3",
     "drupal/countries": "^2.3",
     "drupal/email": "^1.3",
