@@ -29,6 +29,14 @@ Run the following runner commands:
 ./vendor/bin/run drupal:setup-development
 ```
 </p>
+<p>
+
+cd sites/all/libraries <br>
+wget https://github.com/facebook/facebook-php-sdk-v4/archive/4.0.23.tar.gz <br>
+tar -xvf 4.0.23.tar.gz <br>
+mv facebook-php-sdk-v4-4.0.23/ facebook-php-sdk-v4 <br>
+ 
+</p>
 </li>
 </ol>
 
