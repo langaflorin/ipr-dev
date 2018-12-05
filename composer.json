@@ -1,157 +1,153 @@
 {
-    "name": "impreuna_pentru_romania",
-    "description": "Targ servicii",
-    "type": "project",
-    "keywords": ["ipr"],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "conflict": {
-        "drupal/core": "8.*"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/7"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "facebook/php-graph-sdk",
-                "version": "4.0.23",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://github.com/facebook/php-graph-sdk/archive/4.0.23.zip",
-                    "type": "zip"
-                },
-                "source": {
-                    "url": "https://github.com/facebook/php-graph-sdk.git",
-                    "type": "git",
-                    "reference": "dev-master#0017521ab1fc7843a207bea51a4bce6c966a39ff"
-                }
-            }
-        }
-    ],
-    "require": {
-        "php": ">=5.2.5",
-        "ext-curl": "*",
-        "ext-gd": "*",
-        "ext-json": "*",
-        "ext-openssl": "*",
-        "ext-pdo": "*",
-        "ext-pdo_mysql": "*",
-        "ext-xml": "*",
-        "composer/installers": "^1.2",
-        "composer/semver": "^1.4",
-        "cweagans/composer-patches": "^1.6",
-        "drupal-composer/preserve-paths": "^0.1",
-        "drupal/bootstrap": "^3.20",
-        "drupal/composer_autoloader": "^1.0",
-        "drupal/context": "^3.7",
-        "drupal/ctools": "^1.14",
-        "drupal/xautoload": "^5.7",
-        "facebook/php-graph-sdk": "4.0.23",
-        "drupal/libraries": "^2.3",
-        "drupal/strongarm": "^2.0",
-	"drupal/simple_fb_connect": "^2.9",
-        "drupal/countries": "^2.3",
-        "drupal/email": "^1.3",
-        "drupal/telephone": "^1.0-alpha1",
-        "drupal/vat_number": "^1.0-rc1",
-        "drupal/link": "^1.5",
-        "drupal/drupal": "~7.0",
-        "drupal/features": "^2.10",
-        "drupal/jquery_update": "^2.7",
-        "drupal/list_predefined_options": "^1.0",
-        "drupal/menu_attributes": "^1.0",
-        "drupal/realname": "^1.3",
-        "drupal/registry_autoload": "^1.3",
-        "drupal/role_export": "^1.0",
-        "drupal/rules": "^2.11",
-        "drupal/strongarm": "^2.0",
-        "drupal/views": "^3.20",
-        "drupal/views_bulk_operations": "^3.5",
-        "drush/drush": "~8.0",
-        "openeuropa/task-runner": "~0.7.0",
-        "symfony/filesystem": "~2.7|^3",
-        "webflo/drupal-finder": "^1.0.0"
-    },
-    "require-dev": {
-        "behat/behat": "^3.4",
-        "drupal/admin_menu": "^3.0@RC",
-        "drupal/adminimal_theme": "^1.24",
-        "drupal/adminimal_admin_menu": "^1.9",
-        "drupal/devel": "^1.6",
-        "drupal/diff": "^3.3",
-        "drupal/coffee": "^2.3",
-        "drupal/module_filter": "^2.1",
-        "openeuropa/code-review": "~0.2.0"
-    },
-    "replace": {
-        "drupal/context_ui": "^3.7",
-        "drupal/rules_admin": "^2.11",
-        "drupal/views_ui": "^3.20"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ],
-        "psr-4": {
-            "IPR\\": "./src/"
-        }
-    },
-    "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-create-project-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
-        ]
-    },
-    "extra": {
-        "installer-paths": {
-            "web/": ["type:drupal-core"],
-            "web/profiles/{$name}/": ["type:drupal-profile"],
-            "web/sites/all/drush/{$name}/": ["type:drupal-drush"],
-            "lib/profiles/ipr/libraries/{$name}/": ["type:drupal-library"],
-            "lib/profiles/ipr/modules/contrib/{$name}/": ["type:drupal-module"],
-            "lib/profiles/ipr/themes/contrib/{$name}/": ["type:drupal-theme"]
-        },
-        "patches": {
-            "cweagans/composer-patches": {
-                "Call the preserve paths hooks" : "https://github.com/SebCorbin/composer-patches/commit/1cb9bacba51f8bba0c5f3f322c3bb61e4ceae974.patch"
-            },
-            "drupal/adminimal_theme": {
-                "Error if module_filter not enabled" : "https://www.drupal.org/files/issues/adminimal_theme_1_24-2763581-34_0.patch"
-            },
-            "drupal/realname": {
-                "How to display a user's username (not real name) in Views once RealName is enabled" : "https://www.drupal.org/files/issues/realname-views-username-field-1239478-93.patch"
-            },
-            "drupal/views_bulk_operations": {
-                "Integrate multi-page selection" : "https://www.drupal.org/files/issues/1207348.patch"
-            }
-        },
-        "preserve-paths": [
-            "web/sites/all/drush",
-            "web/sites/all/libraries",
-            "web/sites/all/modules/contrib",
-            "web/sites/all/modules/custom",
-            "web/sites/all/modules/features",
-            "web/sites/all/themes/contrib",
-            "web/sites/all/themes/custom",
-            "web/sites/all/translations",
-            "web/sites/default"
-        ]
+  "name": "impreuna_pentru_romania",
+  "description": "Targ servicii",
+  "type": "project",
+  "keywords": [
+    "ipr"
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "conflict": {
+    "drupal/core": "8.*"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/7"
     }
+  ],
+  "require": {
+    "php": ">=5.2.5",
+    "ext-curl": "*",
+    "ext-gd": "*",
+    "ext-json": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-pdo_mysql": "*",
+    "ext-xml": "*",
+    "composer/installers": "^1.2",
+    "composer/semver": "^1.4",
+    "cweagans/composer-patches": "^1.6",
+    "drupal-composer/preserve-paths": "^0.1",
+    "drupal/bootstrap": "^3.20",
+    "drupal/composer_autoloader": "^1.0",
+    "drupal/context": "^3.7",
+    "drupal/ctools": "^1.14",
+    "drupal/xautoload": "^5.7",
+    "facebook/graph-sdk": "5.6",
+    "drupal/libraries": "^2.3",
+    "drupal/strongarm": "^2.0",
+    "drupal/simple_fb_connect": "2.9",
+    "drupal/countries": "^2.3",
+    "drupal/email": "^1.3",
+    "drupal/telephone": "^1.0-alpha1",
+    "drupal/vat_number": "^1.0-rc1",
+    "drupal/link": "^1.5",
+    "drupal/drupal": "~7.0",
+    "drupal/features": "^2.10",
+    "drupal/jquery_update": "^2.7",
+    "drupal/list_predefined_options": "^1.0",
+    "drupal/menu_attributes": "^1.0",
+    "drupal/realname": "^1.3",
+    "drupal/registry_autoload": "^1.3",
+    "drupal/role_export": "^1.0",
+    "drupal/rules": "^2.11",
+    "drupal/strongarm": "^2.0",
+    "drupal/views": "^3.20",
+    "drupal/views_bulk_operations": "^3.5",
+    "drush/drush": "~8.0",
+    "openeuropa/task-runner": "~0.7.0",
+    "symfony/filesystem": "~2.7|^3",
+    "webflo/drupal-finder": "^1.0.0"
+  },
+  "require-dev": {
+    "behat/behat": "^3.4",
+    "drupal/admin_menu": "^3.0@RC",
+    "drupal/adminimal_theme": "^1.24",
+    "drupal/adminimal_admin_menu": "^1.9",
+    "drupal/devel": "^1.6",
+    "drupal/diff": "^3.3",
+    "drupal/coffee": "^2.3",
+    "drupal/module_filter": "^2.1"
+  },
+  "replace": {
+    "drupal/context_ui": "^3.7",
+    "drupal/rules_admin": "^2.11",
+    "drupal/views_ui": "^3.20"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ],
+    "psr-4": {
+      "IPR\\": "./src/"
+    }
+  },
+  "scripts": {
+    "pre-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "pre-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-create-project-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+      "web/": [
+        "type:drupal-core"
+      ],
+      "web/profiles/{$name}/": [
+        "type:drupal-profile"
+      ],
+      "web/sites/all/drush/{$name}/": [
+        "type:drupal-drush"
+      ],
+      "lib/profiles/ipr/libraries/{$name}/": [
+        "type:drupal-library"
+      ],
+      "lib/profiles/ipr/modules/contrib/{$name}/": [
+        "type:drupal-module"
+      ],
+      "lib/profiles/ipr/themes/contrib/{$name}/": [
+        "type:drupal-theme"
+      ]
+    },
+    "patches": {
+      "cweagans/composer-patches": {
+        "Call the preserve paths hooks": "https://github.com/SebCorbin/composer-patches/commit/1cb9bacba51f8bba0c5f3f322c3bb61e4ceae974.patch"
+      },
+      "drupal/adminimal_theme": {
+        "Error if module_filter not enabled": "https://www.drupal.org/files/issues/adminimal_theme_1_24-2763581-34_0.patch"
+      },
+      "drupal/realname": {
+        "How to display a user's username (not real name) in Views once RealName is enabled": "https://www.drupal.org/files/issues/realname-views-username-field-1239478-93.patch"
+      },
+      "drupal/views_bulk_operations": {
+        "Integrate multi-page selection": "https://www.drupal.org/files/issues/1207348.patch"
+      }
+    },
+    "preserve-paths": [
+      "web/sites/all/drush",
+      "web/sites/all/libraries",
+      "web/sites/all/modules/contrib",
+      "web/sites/all/modules/custom",
+      "web/sites/all/modules/features",
+      "web/sites/all/themes/contrib",
+      "web/sites/all/themes/custom",
+      "web/sites/all/translations",
+      "web/sites/default"
+    ]
+  }
 }
