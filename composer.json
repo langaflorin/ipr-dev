@@ -124,7 +124,8 @@
       ],
       "lib/profiles/ipr/themes/contrib/{$name}/": [
         "type:drupal-theme"
-      ]
+      ],
+      "lib/profiles/ipr/libraries/facebook-php-sdk-v4": ["vendor:facebook"]
     },
     "patches": {
       "cweagans/composer-patches": {

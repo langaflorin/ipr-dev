@@ -57,12 +57,11 @@ drupal:
   # You can use same syntax as the "commands:", check the documentation for more.
   # Configuration token replacement is supported too.
   pre_install:
-      - "${runner.bin_dir}/run drupal:setup-folders"
-      - "${runner.bin_dir}/run drupal:settings-setup"
-      - "${runner.bin_dir}/run ipr:build-theme --repo=${ipr.theme.preprocessor.repo} --path=${ipr.theme.preprocessor.path} --branch=${ipr.theme.preprocessor.branch}"
-      - "mv lib/profiles/${drupal.site.profile}/libraries/php-graph-sdk lib/profiles/${drupal.site.profile}/libraries/facebook-php-sdk-v4"
-    post_install:
-      - "${runner.bin_dir}/drush -r ${drupal.root} dis overlay update -y"
+    - "${runner.bin_dir}/run drupal:setup-folders"
+    - "${runner.bin_dir}/run drupal:settings-setup"
+    - "${runner.bin_dir}/run ipr:build-theme --repo=${ipr.theme.preprocessor.repo} --path=${ipr.theme.preprocessor.path} --branch=${ipr.theme.preprocessor.branch}"
+  post_install:
+    - "${runner.bin_dir}/drush -r ${drupal.root} dis overlay update -y"
 
 # -----------------------------------------------------------------------------
 # GitHub configuration values.
