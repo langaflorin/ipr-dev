@@ -29,6 +29,8 @@ Run the following runner commands:
 ./vendor/bin/run drupal:setup-development
 ```
 </p>
+cd web/sites/all/libraries/
+git clone https://github.com/facebook/php-graph-sdk.git facebook-php-sdk-v4
 </li>
 </ol>
 
