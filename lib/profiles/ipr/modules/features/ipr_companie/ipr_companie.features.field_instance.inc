@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ipr_companie.features.field_instance.inc
@@ -51,47 +52,7 @@ function ipr_companie_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
-    ),
-  );
-
-  // Exported field_instance: 'node-ipr_companie-field_ipr_adresa'.
-  $field_instances['node-ipr_companie-field_ipr_adresa'] = array(
-    'bundle' => 'ipr_companie',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_ipr_adresa',
-    'label' => 'Adresa',
-    'required' => 1,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -129,7 +90,7 @@ function ipr_companie_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
@@ -168,7 +129,7 @@ function ipr_companie_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -208,7 +169,7 @@ function ipr_companie_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -258,7 +219,7 @@ function ipr_companie_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => -1,
+      'weight' => 3,
     ),
   );
 
@@ -298,7 +259,7 @@ function ipr_companie_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -338,7 +299,7 @@ function ipr_companie_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -378,7 +339,44 @@ function ipr_companie_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-ipr_companie-field_ipr_location'.
+  $field_instances['node-ipr_companie-field_ipr_location'] = array(
+    'bundle' => 'ipr_companie',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'location_cck',
+        'settings' => array(),
+        'type' => 'location_all',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ipr_location',
+    'label' => 'Location',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'location_cck',
+      'settings' => array(),
+      'type' => 'location',
+      'weight' => 4,
     ),
   );
 
@@ -417,84 +415,7 @@ function ipr_companie_field_default_field_instances() {
         'skip_validation_on_service_failure' => 0,
       ),
       'type' => 'vat_number_widget',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-ipr_companie-field_ipr_oras'.
-  $field_instances['node-ipr_companie-field_ipr_oras'] = array(
-    'bundle' => 'ipr_companie',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_ipr_oras',
-    'label' => 'Oras',
-    'required' => 1,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-ipr_companie-field_ipr_tara'.
-  $field_instances['node-ipr_companie-field_ipr_tara'] = array(
-    'bundle' => 'ipr_companie',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'countries',
-        'settings' => array(),
-        'type' => 'country_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_ipr_tara',
-    'label' => 'Tara',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 7,
     ),
   );
 
@@ -533,7 +454,7 @@ function ipr_companie_field_default_field_instances() {
         'placeholder' => '',
       ),
       'type' => 'telephone_default',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -573,7 +494,7 @@ function ipr_companie_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -631,13 +552,12 @@ function ipr_companie_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Adresa');
   t('Body');
   t('Domeniu de activitate');
   t('Email');
@@ -646,9 +566,8 @@ function ipr_companie_field_default_field_instances() {
   t('Google account');
   t('Instagram account');
   t('Linkedin account');
+  t('Location');
   t('Numar TVA');
-  t('Oras');
-  t('Tara');
   t('Telefon');
   t('Twitter account');
   t('Website');

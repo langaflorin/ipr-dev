@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ipr_companie.features.field_base.inc
@@ -29,25 +30,6 @@ function ipr_companie_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_with_summary',
-  );
-
-  // Exported field_base: 'field_ipr_adresa'.
-  $field_bases['field_ipr_adresa'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ipr_adresa',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_ipr_domeniu_de_activitate'.
@@ -197,6 +179,90 @@ function ipr_companie_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_ipr_location'.
+  $field_bases['field_ipr_location'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_ipr_location',
+    'indexes' => array(
+      'lid' => array(
+        0 => 'lid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'location_cck',
+    'settings' => array(
+      'gmap_macro' => '[gmap ]',
+      'gmap_marker' => 'drupal',
+      'location_settings' => array(
+        'display' => array(
+          'hide' => array(
+            'additional' => 0,
+            'city' => 0,
+            'coords' => 'coords',
+            'country' => 0,
+            'country_name' => 0,
+            'locpick' => 'locpick',
+            'map_link' => 'map_link',
+            'name' => 'name',
+            'postal_code' => 0,
+            'province' => 'province',
+            'province_name' => 'province_name',
+            'street' => 0,
+          ),
+        ),
+        'form' => array(
+          'fields' => array(
+            'additional' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => 6,
+            ),
+            'city' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => 8,
+            ),
+            'country' => array(
+              'collect' => 1,
+              'default' => 'be',
+              'weight' => 14,
+            ),
+            'locpick' => array(
+              'collect' => 0,
+              'weight' => 20,
+            ),
+            'name' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => 2,
+            ),
+            'postal_code' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => 12,
+            ),
+            'province' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => 10,
+              'widget' => 'autocomplete',
+            ),
+            'street' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => 4,
+            ),
+          ),
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'location',
+  );
+
   // Exported field_base: 'field_ipr_numar_tva'.
   $field_bases['field_ipr_numar_tva'] = array(
     'active' => 1,
@@ -214,51 +280,6 @@ function ipr_companie_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'vat_number',
-  );
-
-  // Exported field_base: 'field_ipr_oras'.
-  $field_bases['field_ipr_oras'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ipr_oras',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_ipr_tara'.
-  $field_bases['field_ipr_tara'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ipr_tara',
-    'indexes' => array(
-      'iso2' => array(
-        0 => 'iso2',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'countries',
-    'settings' => array(
-      'continents' => array(),
-      'countries' => array(),
-      'enabled' => 1,
-      'size' => 5,
-    ),
-    'translatable' => 0,
-    'type' => 'country',
   );
 
   // Exported field_base: 'field_ipr_telefon'.
