@@ -85,7 +85,7 @@ function ipr_companie_views_default_views() {
     'latitude' => '',
     'longitude' => '',
     'postal_code' => '',
-    'country' => 'be',
+    'country' => '',
     'php_code' => '',
     'nid_arg' => '',
     'nid_loc_field' => 'node',
@@ -95,9 +95,10 @@ function ipr_companie_views_default_views() {
   );
   $handler->display->display_options['filters']['distance']['exposed'] = TRUE;
   $handler->display->display_options['filters']['distance']['expose']['operator_id'] = 'distance_op';
-  $handler->display->display_options['filters']['distance']['expose']['label'] = 'Locatie';
+  $handler->display->display_options['filters']['distance']['expose']['label'] = 'Distance / Proximity';
   $handler->display->display_options['filters']['distance']['expose']['operator'] = 'distance_op';
   $handler->display->display_options['filters']['distance']['expose']['identifier'] = 'distance';
+  $handler->display->display_options['filters']['distance']['expose']['required'] = TRUE;
   $handler->display->display_options['filters']['distance']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -108,7 +109,6 @@ function ipr_companie_views_default_views() {
   $handler->display->display_options['filters']['distance']['expose']['user_location_choose'] = array(
     'default' => FALSE,
   );
-  $handler->display->display_options['filters']['distance']['origin'] = 'postal';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -120,6 +120,64 @@ function ipr_companie_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $export['cautare_companie'] = $view;
+
+  $view = new view();
+  $view->name = 'ipr_cautare_companie';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_default_node_index';
+  $view->human_name = 'Cautare companie 2';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Cautare companie 2';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Field: Indexed Node: Domeniu de activitate */
+  $handler->display->display_options['fields']['field_ipr_domeniu_de_activitate']['id'] = 'field_ipr_domeniu_de_activitate';
+  $handler->display->display_options['fields']['field_ipr_domeniu_de_activitate']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ipr_domeniu_de_activitate']['field'] = 'field_ipr_domeniu_de_activitate';
+  $handler->display->display_options['fields']['field_ipr_domeniu_de_activitate']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_ipr_domeniu_de_activitate']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_ipr_domeniu_de_activitate']['bypass_access'] = 0;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Keywords';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'cautare-companie-2';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $export['ipr_cautare_companie'] = $view;
 
   return $export;
 }

@@ -56,6 +56,47 @@ function ipr_companie_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-ipr_companie-field_ipr_adress'.
+  $field_instances['node-ipr_companie-field_ipr_adress'] = array(
+    'bundle' => 'ipr_companie',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'geofield',
+        'settings' => array(
+          'data' => 'full',
+        ),
+        'type' => 'geofield_wkt',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ipr_adress',
+    'label' => 'Adress',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geofield',
+      'settings' => array(
+        'html5_geolocation' => 0,
+      ),
+      'type' => 'geofield_latlon',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance:
   // 'node-ipr_companie-field_ipr_domeniu_de_activitate'.
   $field_instances['node-ipr_companie-field_ipr_domeniu_de_activitate'] = array(
@@ -558,6 +599,7 @@ function ipr_companie_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Adress');
   t('Body');
   t('Domeniu de activitate');
   t('Email');
